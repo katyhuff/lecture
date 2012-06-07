@@ -1310,10 +1310,48 @@ With this algebraic calculation of $Q(t)$, the heat evolution of the waste form,
 there are a number of ways to estimate repository capacity for that waste stream 
 while holding the package spacing constant. 
 
-\subsubsection{Peak Heat Based Estimation}
+\subsubsection{Peak Heat Approximation}
 
-Since, for most nuclides, the decay heat curve lowers over time, one 
-conservative estimation could base the heat ba 
+One conservative estimation could assume that $Q(t)$ is a constant heat flux, 
+$Q_{max}$ equal to the peak of calculated waste form heat evolution, 
+$max(Q(t))$. Assuming $Q(t) = Q_{max} \forall t$, it would be possible to 
+directly refer to previously calculated repository evolution results 
+based on constant heat and spacing. 
+
+
+\subsubsection{Effective Mean Decay Power}
+
+Introduced by Radel, Wilson et. al., the Specific Temperature Change method uses 
+a linear approximation to arrive at the thermal loading density limit.  
+
+The mean decay constant of the radionuclide constituents in the waste form was 
+compared to the thermal time constant in the rock. 
+
+% WHAT IS THE THERMAL TIME CONSTANT
+
+When the thermal time constant of the rock is much shorter than the waste form 
+decay package, the change in package wall temperature can be described by 
+
+\begin{align}
+q(t_0)\rho_{limit}C'&=\Delta T_1
+\label{Tracy2.2}
+\intertext{where}
+\rho_{limit} &= \frac{C_1}{Q_1}\nonumber\\
+C' &= \mbox{ Thermal constant }[-]\nonumber\\
+\Delta T &= \mbox{ Constant difference between }T_{lim}\mbox{ and }T_{amb}[^{\circ}C]\nonumber\\
+T_{lim} &= \mbox{ Temperature limit }[^{\circ}]\nonumber
+T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber\\
+\end{align}
+
+
+
+
+
+\subsubsection{Thermal Half-Life Approximation}
+
+There is some notion of a thermal halflife in the literature. 
+
+
 
 \subsection{Waste Stream Loading Density in Waste Forms}
 
