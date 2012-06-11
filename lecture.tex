@@ -185,7 +185,6 @@ such as fractures, lava tubes, and caverns.
   and secondary porosity, such as discrete fractures, caverns, and lava tubes,
   both contribute to total porosity \cite{heath_basic_1983}.} 
   \label{fig:porosity}
-  
 \end{figure}
 
 Equipped with a notion of the total porosity, it is possible to define the 
@@ -1044,16 +1043,19 @@ With the boundary conditions
 
 
 \subsubsection{Three Dimensional Semi-Infinite Solution}
-The conceptual model in Figure \ref{fig:1dfin} represents solute transport
+The conceptual model in Figure \ref{fig:3dinf} represents solute transport
 in three dimensions with unidirectional flow and a semi-infinite boundary 
-condition in the positive flow direction.  \begin{figure}[htbp!]
+condition in the positive flow direction.  
+
+\begin{figure}[htbp!]
   \begin{center}
     \def\svgwidth{.8\textwidth}
     \input{3dinf.eps_tex}
   \end{center}
   \caption{Case IV, a three dimensional, semi-infinite model.}
-  \label{fig:1dfin}
+  \label{fig:3dinf}
 \end{figure}
+
 With the boundary conditions
 \begin{align}
   -D \frac{\partial C}{\partial x}\big|_{x=0} + v_xc &= \begin{cases}
@@ -1099,7 +1101,7 @@ radionuclide transport.
 
 For systems in which the flow can be assumed constant, it is possible to model a 
 system of volumes as a connected lumped paramter models (Figure 
-\ref{fig:lumpedseries}. 
+\ref{fig:lumpedseries}). 
 
 
 \begin{figure}[htbp!]
@@ -1178,11 +1180,9 @@ expressed, in one dimension, as
 \begin{align}
   vC_0 &= v\sum_{p=1}^{p=P} C_p
   \intertext{where}
-  vC_0 &= \mbox{ constant solute flux during the timestep }[kg/m^3/s 
-  <+check+>]\nonumber\\
+  vC_0 &= \mbox{ constant solute flux during the timestep }[kg/m^3/s <+check+>]\nonumber\\
   C_p &= \mbox{ available concentration at waste package p }[kg/m^3]\nonumber\\
-  P &= \mbox{ number of waste packages within the buffer cylinder 
-  }[\#].\nonumber\\
+  P &= \mbox{ number of waste packages within the buffer cylinder }[\#].\nonumber\\
   \label{wpsum}
 \end{align}
 
@@ -1269,12 +1269,12 @@ M &= \mbox{ Atomic weight }[amu].\nonumber
 Energy in $MeV$ can be converted to Watts by the conversion factor,
 
 \begin{align}
-1 [MeV\cdot s^{-1}] &= 1.6\times10^{-13}[W],
+1 [MeV\cdot s^{-1}] = 1.6\times10^{-13}[W],
 \label{MeV2Watt}
 \end{align}
 such that
 \begin{align}
-Q &= 1.6\times10^{-13}\frac{E\lambda N_A}{M}[W/g].
+Q = 1.6\times10^{-13}\frac{E\lambda N_A}{M}[W/g].
 \label{heat}
 \end{align}
 
@@ -1318,6 +1318,14 @@ $max(Q(t))$. Assuming $Q(t) = Q_{max} \forall t$, it would be possible to
 directly refer to previously calculated repository evolution results 
 based on constant heat and spacing. 
 
+\begin{figure}[htb!]
+  \begin{center}
+    \def\svgwidth{.7\textwidth}
+    \input{acceptance.eps_tex}
+  \end{center}
+  \caption{A lookup table can be populated with the acceptance threshold for each $K_{th}, \alpha_{th}$ combination.} 
+  \label{fig:acceptance}
+\end{figure}
 
 \subsubsection{Effective Mean Decay Power}
 
@@ -1334,13 +1342,13 @@ decay package, the change in package wall temperature can be described by
 
 \begin{align}
 q(t_0)\rho_{limit}C'&=\Delta T_1
-\label{Tracy2.2}
+\label{fig:Tracyfig}
 \intertext{where}
 \rho_{limit} &= \frac{C_1}{Q_1}\nonumber\\
 C' &= \mbox{ Thermal constant }[-]\nonumber\\
 \Delta T &= \mbox{ Constant difference between }T_{lim}\mbox{ and }T_{amb}[^{\circ}C]\nonumber\\
-T_{lim} &= \mbox{ Temperature limit }[^{\circ}]\nonumber
-T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber\\
+T_{lim} &= \mbox{ Temperature limit }[^{\circ}C]\nonumber\\
+T_{amb} &= \mbox{ Ambient rock temperature }[^{\circ}C]\nonumber
 \end{align}
 
 
@@ -1369,4 +1377,7 @@ This model should be capable of calculating the temperature field through the
 repository over time for a certain waste package layout. 
 
 
-
+\pagebreak
+\bibliographystyle{ieeetr}
+\bibliography{lecture}
+\end{document}
