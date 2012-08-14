@@ -1,0 +1,43 @@
+\section{Nuclide Model Implementations}
+
+\subsection{Buffer Model}
+
+The buffer component is a long, but finite, cylindrical geometry with a series 
+of cylindrical waste packages within it. These waste packages can be modeled as  
+a single line source, a series of cylinders, or a series of points. If they are  
+modeled as a single line source, the flux emitted by the line boundary will be 
+expressed, in one dimension, as
+\begin{align}
+  vC_0 &= v\sum_{p=1}^{p=P} C_p
+  \intertext{where}
+  vC_0 &= \mbox{ constant solute flux during the timestep }[kg/m^3/s <+check+>]\nonumber\\
+  C_p &= \mbox{ available concentration at waste package p }[kg/m^3]\nonumber\\
+  P &= \mbox{ number of waste packages within the buffer cylinder }[\#].\nonumber\\
+  \label{wpsum}
+\end{align}
+
+If the line source is chosen, the one dimensional models in cases I, II, or III 
+can be used, as can the lumped parameter model.  In these cases, the flux at the 
+inner buffer radius is described by the cylindrical source waste form. The 
+concentration gradient can be defined as zero either at the outer buffer radius, 
+or at infinity. These approximate solutions may not give significantly different 
+results for many situations, but each will be investigated.
+
+If alternatively, the waste packages are modeled as discrete cylinders, the 
+buffer must also be modeled as a discrete cylinder within the broader, far field  
+semi-infinite medium. 
+
+\subsection{Far Field Solution}
+
+The three dimensional solution with a cylindrical source of constant flux is the
+most appropriate treatment for the boundary conditions of the far field 
+component. With the length of the tunnels and outer radial dimension of the 
+buffer, the far field can be modeled as a semi-infinite medium and the flux at 
+the location of the perceived aquifer can be queried.  In case IV, the flux 
+escaping the cylindrical buffer will be an output of the buffer model.  The 
+concentration gradient is zero at infinity.
+
+The far field may also be modeled as a lumped parameter system. It may either be  
+modeled as a single lumped parameter component or as a series of smaller 
+dimension lumped parameter components. For a homogeneous medium, the difference  
+in accuracy between these two approaches will be zero, tho

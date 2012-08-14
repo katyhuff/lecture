@@ -1,0 +1,303 @@
+\section{Groundwater Hydrology
+\cite{schwartz_fundamentals_2003, wang_introduction_1982}}
+
+Groundwater hydrology is the study of groundwater movement.
+
+\subsection{Hydraulic Head }
+
+Hydraulic head is the hydrologic indicator of potential energy. It has units of 
+length, specifically height above a geological \emph{datum}, the zero point 
+relative to which heads are measured. 
+
+One way to derive this notion is according to Hubbart's derivation 
+\cite{wang_introduction_1982}. The work to raise the water to a pressure, $P$, 
+and the work required to raise the water to an elevation, $z$, are additive.
+
+The work required to raise a mass, $m$, to a pressure, $P$, is described by the 
+integral
+\begin{align}
+  W_P &= \frac{1}{m}\int_0^PVdP
+  \intertext{where}
+  m  &= \mbox{ mass of the water }[kg]\nonumber\\
+  V  &= \mbox{ volume of the water }[m^3]\nonumber\\
+  P  &= \mbox{ pressure }[ kg/m/s^2].\nonumber
+\end{align}
+
+In an incompressible fluid such as water, the work $W_P$ required to raise a 
+unit mass
+to some pressure, $P$, becomes
+\begin{align}
+  W_P &= P/\rho_w \label{workp}
+  \intertext{where}
+  \rho_w  &= \mbox{ the density of water}[kg/m^3].\nonumber
+\end{align}
+
+The work required to raise a unit mass to elevation $z$ from elevation $z_{ref}$  
+(the `datum') is simply the work, $W_g$ against gravity
+\begin{align}
+  W_g &= g(z-z_{ref})
+  \label{workg}
+  \intertext{where}
+  g  &= \mbox{ acceleration of gravity }[m/s^2].\nonumber
+\end{align}
+
+From these expressions for work the potential energy function, $\phi$, of the 
+two  separate potentials, pressure and elevation, act additively on a unit mass 
+of groundwater. Their combined effects can be written as the sum,
+\begin{align}
+  \phi &= W_P + W_g\nonumber\\
+       &= \frac{P}{\rho_w} + g(z-z_{ref}.)
+  \label{potentialfunc}
+  \intertext{If}
+  z_{ref} &= 0\nonumber
+  \intertext{and the potential energy is directly proportional to gravity}
+  \phi &= gh \nonumber
+  \intertext{where}
+  h &= \mbox{ Darcy's experimental head }[m],\nonumber
+  \intertext{then}
+  h &= \frac{\phi}{g}\nonumber\\
+    &= \frac{P}{\rho_wg} + z\nonumber\\
+    &=  \psi + z \label{bernoulli}
+  \intertext{where}
+  z &= \mbox{ elevation head }[m]\nonumber\\
+  \psi &= \mbox{ pressure head }[m].\nonumber
+\end{align}
+
+Thus, the total hydraulic head, $h$, of a column of water is the vertical 
+distance from the datum ($h=0$) to the height of the water surface.  Elevation 
+head, $z$, is the distance from the datum to the measuring point in the flow 
+field. The pressure head, $\psi$, is the pressure, $P$ in $[Pa]$, at that 
+measurement point, divided by the density of the fluid, $\rho_w$, and the 
+accelation of gravity, $g$. Pressure head, elevation head, and total head are 
+shown in Figure
+\ref{fig:head}. 
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \def\svgwidth{.7\textwidth}
+    \input{head.eps_tex}
+    \caption{Various types of head value in a column of water in a well are 
+    measured with respect to the datum.}
+    \label{fig:head}
+  \end{center}
+\end{figure}
+
+
+Different lithologies and candidate sites have different head gradients. Due to 
+anisotropies in their hydraulic conductivity tensors (see section 
+\ref{subsec:cond}), some lithologies, such as clay, are less likely to have 
+strong head gradients. 
+
+\subsection{Porosity}
+
+Porosity is a hydraulic parameter which significantly contributes to the 
+hydraulic conductivity of a medium. 
+
+The porosity of a medium is the ration of void volume, $V_v$, in the medium to 
+the total volume, $V_T$ of the medium. As shown in Figure \ref{fig:wetDry}, the 
+volume of water sufficient to saturate a packed sand matrix is equivalent to the 
+void volume.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \def\svgwidth{\textwidth}
+    \input{wetDry.eps_tex}
+  \end{center}
+  \caption{The ratio of the volume of saturation water to the total packed sand 
+  volume gives the porosity, $n$, in $[\%]$ \cite{heath_basic_1983}. }
+  \label{fig:wetDry}
+\end{figure}
+
+The porosity of a material is therefore mathematically defined as \begin{align}
+  n_T &= \frac{\mbox{void volume}}{\mbox{total volume}}\nonumber\\
+      &= \frac{V_v}{V_T}\nonumber\\
+      &= \frac{V_T-V_s}{V_T}
+  \label{porosity}
+  \intertext{where}
+  n_T &= \mbox{ total porosity }[\%]\nonumber\\
+  V_v &= \mbox{ void volume }[m^3]\nonumber\\
+  V_T &= \mbox{ total volume }[m^3]\nonumber\\
+  V_s &= \mbox{ volume of solids }[m^3].\nonumber
+  \intertext{The dry solid volume can be defined as}
+  V_s    &= \frac{m_s}{\rho_s}
+  \intertext{and the total dry volume can be defined as}
+  V_T    &= \frac{m_s}{\rho_b},
+  \intertext{where}
+  \rho_s &= \mbox{ grain density, or density of solids }[kg/m^3]\nonumber\\
+  m_s    &= \mbox{ mass of solids }[kg]\nonumber\\
+  \intertext{and}
+  \rho_b &= \mbox{ bulk (dry) density }[kg/m^3],\nonumber\\
+  \intertext{equation \eqref{porosity} can be rewritten}
+  n_T    &= 1 - \frac{\rho_b}{\rho_s}.
+\end{align}
+
+The total porosity is a combination of primary and secondary porosity, shown in 
+Figure \ref{fig:porosity}. Primary porosity is the macroscopically homogeneous  
+void space present between grains in a geological matrix. This type of porosity 
+includes empty space between grains of sand or consolidated rock characteristic 
+of the level of packing or method of consolidation of the matrix. Secondary 
+porosity is not intrinsic
+to the rock, but induced in it. Examples of secondary porosity include features  
+such as fractures, lava tubes, and caverns.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \def\svgwidth{.8\textwidth}
+    \input{porosity.eps_tex}
+  \end{center}
+  \caption{Primary porosity, a homogeneous characteristic of the rock matrix, 
+  and secondary porosity, such as discrete fractures, caverns, and lava tubes,
+  both contribute to total porosity \cite{heath_basic_1983}.} 
+  \label{fig:porosity}
+\end{figure}
+
+Equipped with a notion of the total porosity, it is possible to define the 
+effective porosity shown in figure \ref{fig:effPorosity}, which is the 
+interconnected porosity through which fluid may flow, \begin{align}
+  n_{eff} &= \frac{V_c}{V_T}n_T.  \label{effPorosity}
+  \intertext{where}
+  V_c &= \mbox{ interconnected volume. }\nonumber
+\end{align}
+Effective porosity is more influential on ground water flow in a porous medium 
+than the total porosity, as it contributes to the permeability of the medium.  
+In some media, the effective porosity is significantly different than the total  
+porosity, resulting in much lower flow rates than the total porosity alone would 
+indicate. Granite, for example, has an effective porosity that is nearly three 
+magnitudes lower than its total porosity. 
+
+\vspace{1cm}
+\begin{figure}[htbp!]
+  \begin{center}
+    \def\svgwidth{.5\textwidth}
+    \input{effPorosity.eps_tex}
+  \end{center}
+  \caption{A medium with a poorly connected pore volume has low effective 
+  porosity, and vice versa.}
+  \label{fig:effPorosity}
+\end{figure}
+
+\subsection{Darcy's Law}
+
+Darcy's Law is analgous to Fourier's Law of heat conduction, and states that 
+flow occurs as a function of a head gradient with a speed that obeys the 
+hydraulic properties of the medium. Darcy's law for one dimensional flow is 
+
+\begin{align}
+  \frac{Q}{A} &= -K\frac{h_2 - h_1}{l_2-l_1} \label{darcy1d}
+  \intertext{where}
+  Q &= \mbox{ volumetric flow rate }[m^3/s]\nonumber
+  \intertext{and}
+  A &= \mbox{ cross sectional area of flow field }[m^2]\nonumber\\
+  K &= \mbox{ hydraulic conductivity }[ m/s ].\nonumber\\
+  h_i &= \mbox{ hydraulic head measured at point i } [m]\nonumber\\
+  l_i &= \mbox{ linear position of point i } [m]\nonumber
+\end{align}
+
+Using the the definition of specific discharge (also known as Darcy flux), $q = 
+Q/A$, and expressing the law in its differential form gives
+
+\begin{align}
+  q &= -K\frac{\partial h}{\partial l}.
+  \label{darcy1ddiff}
+\end{align}
+  
+The three dimensional form requires that the one dimensional form in equation 
+\eqref{darcy1ddiff} be true for each spatial component, such that
+
+\begin{align}
+  \vec{q} &= -K\nabla{h}
+  \label{darcy3d}
+  \intertext{where}
+  \vec{q} &= \mbox{ specific discharge vector }[m^3/s]\nonumber\\
+  &= q_x\hat{\imath} + q_y\hat{\jmath} + q_z\hat{k}\nonumber
+  \intertext{and}
+  \nabla{h} &= \frac{\partial h}{\partial x} + \frac{\partial h}{\partial y} + 
+  \frac{\partial h}{\partial z}. \nonumber
+\end{align}
+
+In the case of anisotropic media, the hydraulic conductivity, $K$ is given as a 
+spatially heterogenous tensor, $\textbf{K}$. The general, three dimensional, 
+anisotropic Darcy equation is therefore 
+
+\begin{align}
+  \vec{q} &= -\textbf{K}\nabla{h}
+  \label{darcyanisotropic}
+  \intertext{where}
+  \textbf{K} &= \mbox{ hydraulic conductivity tensor }[ m/s ].\nonumber
+\end{align}
+
+\subsection{Hydraulic Conductivity}
+\label{subsec:cond}
+
+The hydraulic conductivity of a medium is a tensor that describes the ease with 
+which water passes through the pore spaces of the medium in all directions.  
+This tensor may be homogeneous or heterogeneous and isotropic or anisotropic. 
+
+\subsubsection{Heterogeneity of the Hydraulic Conductivity}
+
+Heterogeneity of a hydrogeological unit describes the spatial variability of the 
+hydraulic conductivity. If the hydraulic conductivity is the same when
+measured at all points in the hydrogeological medium,
+
+\begin{align}
+  \forall i,j \in V : K(x_i,y_i,z_i) = K(x_j,y_j,z_j),
+  \label{homogeneous}
+\end{align}
+then the medium is homogenous. If instead, the hydraulic conductivity is
+different at different locations, such that 
+\begin{align}
+  \exists i\ne j \in V : K(x_i,y_i,z_i) \ne K(x_j,y_j,z_j),
+  \label{heteroeneous}
+\end{align}
+
+then the medium is heterogeneous.
+
+\subsubsection{Anisotropy of the Hydraulic Conductivity}
+
+Anisotropy of a hydrogeological unit describes the local directional dependence 
+of the hydraulic conductivity tensor. Specifically, at a single location, an 
+isotropic medium will demonstrate the same hydraulic conductivity in all 
+directions, while an anisotropic medium will not.
+
+Mathematically speaking, if the conductivity is constant at all measurement 
+angles, $\theta$, such that
+
+\begin{align}
+  \forall \theta_i,\theta_j \in (0,2\pi) : K(\theta_i,x,y,z) = K(\theta_j,x,y,z) 
+  \\
+  \label{isotropic}
+\end{align}
+then the medium is isotropic. If instead, the angular components of the
+hydraulic conductivity are nonconstant, such that
+\begin{align}
+  \exists \theta_i\ne\theta_j \in (0,2\pi) : K(\theta_i,x,y,z) \ne 
+  K(\theta_j,x,y,z),
+  \label{anisotropic}
+\end{align}
+then the medium is anisotropic and the tensor is expressed most generally,
+\begin{align}
+  \textbf{K} &= \mbox{ hydraulic conductivity tensor }[ m/s ]\nonumber\\
+             &= \left[ \begin{array}{ccc}
+                K_{xx}  & K_{xy}  & K_{xz}  \\
+                K_{yx}  & K_{yy}  & K_{yz}  \\
+                K_{zx}  & K_{zy}  & K_{zz}  \end{array} \right]
+    \label{condfull}
+    \intertext{where}
+    K_{ij} &=\mbox{jth component in the i direction}.\nonumber
+\end{align}
+The general tensor in equation \eqref{condfull} is a second rank symmetric 
+tensor and can always be simplified by aligning the tensor with the principal 
+axis of anisotropy\cite{schwartz_fundamentals_2003}. This principal direction is 
+defined by the directions of maximum ($K_{\parallel}$), minimum ($K_{\perp}$), 
+and intermediate ($K_{\parallel}\times K_{\perp}$) hydraulic conductivity. That 
+is, by aligning the tensor with the flow axis, it may be reduced to a diagonal 
+matrix,
+
+\begin{align}
+    \textbf{K} &= \left[ \begin{array}{ccc}
+                 K_{xx}  & 0       & 0  \\
+                 0       & K_{yy}  & 0  \\
+                 0       & 0       & K_{zz}  \end{array} \right].
+  \label{conddiag}
+\end{align}
+

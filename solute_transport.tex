@@ -1,0 +1,179 @@
+\section{Mechanisms of Solute Transport}
+
+Solutes in groundwater are transported due to various mechanisms.
+
+\subsection{Diffusion}
+\label{ss:diffusion}
+
+Solutes will move from a location of high concentration to a location of low 
+concentration due to the random thermal kinetic enery of the solute. Brownian 
+motion is responsible for diffusion.
+
+\begin{figure}[htbp!]
+  \begin{center}
+    \def\svgwidth{.6\textwidth}
+    \input{Diffusion.eps_tex}
+  \end{center}
+  \caption{In diffusive transport, particles move according to random thermal 
+  motion down the concentration gradient \cite{jrpol_diffusion.svg_2011}.}
+  \label{fig:Diffusion}
+\end{figure}
+
+A mathematical description of this phenomenon can be addressed by describing the 
+particle's motion as a random walk and applying statistical analysis. Another 
+derivation of this phenomenon describes the flux, $J$ through a plane in a 
+volume, and gives Fick's Law for porous media,
+
+\begin{align}
+  J_{xdif} &= -D' \frac{dC}{dx}\nonumber\\
+  \label{ficks}
+  \intertext{where}
+  J_x &= \mbox{ Mass flux through the y-z plane }[kg/m^2/s]\nonumber\\
+  D' &= \mbox{ Effective diffusion coefficient }[m^2/s]\nonumber\\
+  C &= \mbox{ Concentration }[kg/m^3].\nonumber\\
+\end{align}
+
+The determination of the diffusion coefficient can be empirical or analytical.  
+The Arrhenius equation gives a thermal dependence of the diffusion coefficient 
+as does the Stokes-Einstein relationship.
+
+The effecive diffusion coefficient for porous media is dependent on porosity and  
+tortuosity, which affect the diffusion behavior of a solute. In a saturated porous 
+medium, diffusion takes place only within the pore volume where liquid is 
+present. To take this into account, the effective diffusion coefficient in a 
+porous medium is reduced by both the absence of fluid in the matrix volume, and 
+by the so-called ``tortuosity'' of the pathways. 
+
+\begin{align}
+  J_{xdif} &= -n\tau D_m \frac{dC}{dx}\\
+  \label{ficks}
+  \intertext{where}
+  J_{xdif} &= \mbox{ Mass flux through the y-z plane in a porous medium}[kg/m^2/s]\nonumber\\
+  n &= \mbox{ porosity }[\%]\nonumber\\
+  \tau &= \mbox{ tortuosity }[-]\nonumber\\
+  D_m &= \mbox{ Molecular diffusion coefficient }[m^2/s]\nonumber\\
+  C &= \mbox{ Concentration }[kg/m^3].\nonumber
+\end{align}
+
+The tortuosity of a saturated porous medium can be estimated from the porosity 
+with an equation developed by Millington and Quirk (1961),
+
+\begin{align}
+  \tau &= \frac{n_w^{7/3}}{n^2} \label{millington}
+  \intertext{which for a saturated medium is estimated as }
+  \tau &= n^{1/3}.  \\
+  % Below is true, but where to put it . . . ?
+  % D' = n\tau D_m = nD^{\star}
+\end{align}
+
+
+\subsection{Dispersion \cite{schwartz_fundamentals_2003}}
+
+Solutes can be driven to move due to mechanical mixing, known as dispersion.  
+Solutes acting under dispersion may travel further than they would due to 
+advection alone. During fluid mixing in which a fluid with one solute 
+concentration displaces a fluid with another concentration, dispersion causes a 
+zone of mixing to develop around the advective front.
+
+Dispersion in groundwater is caused by a combination of two phenomena. The first 
+is mechanical dispersion, in which local variability of the fluid velocity 
+around the mean due to mechanical heterogeneities of the rock at many scales.  
+The second phenomenon is diffusion, discussed in section \ref{ss:diffusion}.
+
+A mathematical description of this phenomenon will come generally from fluid 
+dynamics. The total mechanical dispersive and diffusive phenomena can be 
+combined as a total dispersive expression,
+\begin{align}
+  D &= D_{mdis} + \tau D_m
+  \intertext{where}
+  D_{mdis}&= \mbox{ coefficient of mechanical dispersivity }[m^2/s]\nonumber\\
+          &=\alpha_{L} \frac{v_x^2}{|v|} + \alpha_{TH} \frac{v_y^2}{|v|} + 
+          \alpha_{TV} \frac{v_z^2}{|v|},\\ \alpha_L  &= \mbox{ longitudinal 
+          dispersivity }[m],\nonumber\\
+  \alpha_{TH}  &= \mbox{ horizontal transverse dispersivity }[m],\nonumber\\
+  \alpha_{TV}  &= \mbox{ vertical transverse dispersivity }[m],\nonumber\\
+  \tau &= \mbox{ tortuosity }[-],\nonumber
+  \intertext{and}
+  D_m &= \mbox{ coefficient of molecular diffusion }[m^2/s]\nonumber.
+  \label{totaldisp}
+\end{align}
+The dispersive mass flux can therefore be described, as in Burnett and Frind, 
+1987,
+\begin{align}
+  J_{dis} &= J_{mdis} + J_{dif} \\
+          &= -n\left(D_{mdis} + \tau D_m\right)\nabla C\\
+          &= -nD\nabla C
+  \label{dispflux}
+  \intertext{where}
+  D &= \left[ \begin{array}{ccc}
+                D_{xx}  & D_{xy}  & D_{xz}  \\
+                D_{yx}  & D_{yy}  & D_{yz}  \\
+                D_{zx}  & D_{zy}  & D_{zz}  \end{array} \right],\nonumber\\
+  D_{ij} &=
+         \begin{cases} \alpha_{L} \frac{v_x^2}{|v|} + \alpha_{TH} 
+           \frac{v_y^2}{|v|} + \alpha_{TV} \frac{v_z^2}{|v|} &  i=j=x,\\
+                       \alpha_{L} \frac{v_y^2}{|v|} + \alpha_{TH} 
+                       \frac{v_x^2}{|v|} + \alpha_{TV} \frac{v_z^2}{|v|} 
+                       + \tau  D_m & i=j=y,\\
+                       \alpha_{L} \frac{v_z^2}{|v|} + \alpha_{TV} 
+                       \frac{v_y^2}{|v|} + \alpha_{TV} \frac{v_x^2}{|v|}  
+                       + \tau D_m & i=j=z,\\
+                       \left(\alpha_L - \alpha_{TH}\right)\frac{v_xv_y}{|v|} 
+                       + \tau D_m & i=x, j=y,\\
+                       \left(\alpha_L - \alpha_{TV}\right)\frac{v_xv_z}{|v|} & 
+                       i=(x,z),j=(z,x),\\
+                       \left(\alpha_L - \alpha_{TV}\right)\frac{v_yv_z}{|v|} & 
+                       i=(y,z), j=(z,y),\\
+         \end{cases}
+\intertext{and}
+|v| &= \sqrt{v_x^2 +v_y^2 + v_x^2}.
+\end{align}
+For uniform flow, where $v=v_x$ and $v_y=v_z=0$,
+\begin{align}
+  D_x &= D_L \nonumber\\
+      &= \alpha_L v_x + \tau D_m\\
+  D_y &= D_{TH} \nonumber\\
+      &= \alpha_{TH} v_x + \tau D_m\\
+  D_z &= D_{TV} \nonumber\\
+      &= \alpha_{TV} v_x + \tau D_m.
+  \label{uniflow}
+\end{align}
+
+\subsection{Advection}
+
+Solutes are transported by advection when they move along with the water in 
+which they are dissolved. The expression for mass flux due to dispersion can be 
+added to the expression for mass flux due to advection to give total mass flux 
+due to both,
+
+\begin{align}
+  J &=  J_{mdis} + J_{dif} + J_{adv}\\
+    &=  J_{dis} + J_{adv}\\
+    &= -nD\nabla C + nvC\\
+    &=\left(-nD_{xx} \frac{\partial C}{\partial x}
+            -nD_{xy} \frac{\partial C}{\partial y}
+            -nD_{xz} \frac{\partial C}{\partial z}
+             + nv_xC \right)\hat{\imath} \nonumber\\
+    & + \left(-nD_{yx} \frac{\partial C}{\partial x}
+            -nD_{yy} \frac{\partial C}{\partial y}
+            -nD_{yz} \frac{\partial C}{\partial z}
+            + nv_yC \right)\hat{\jmath} \nonumber\\
+    & + \left(-nD_{zx} \frac{\partial C}{\partial x}
+            -nD_{zy} \frac{\partial C}{\partial y}
+            -nD_{zz} \frac{\partial C}{\partial z}
+            + nv_zC \right)\hat{k}.
+            \label{jadvdisp}
+\end{align}
+
+For unidirectional flow
+
+\begin{align}
+  J &=\left(-nD_{xx} \frac{\partial C}{\partial x}
+             + nv_xC \right)\hat{\imath}
+             + \left( -nD_{yy} \frac{\partial C}{\partial y}
+            \right)\hat{\jmath}
+            + \left( -nD_{zz} \frac{\partial C}{\partial z}
+            \right)\hat{k}.
+            \label{jadvdisp}
+\end{align}
+

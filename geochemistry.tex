@@ -1,0 +1,203 @@
+\section{Geochemistry}
+
+Geochemical phenomena significantly affect solute transport. As such, the 
+geochemical attributes of various environments contribute differently to 
+repository performance.
+
+\subsection{Saturated and Unsaturated Environments}
+
+Saturated repository concepts are found below the water table. Water permeates 
+the rock.
+
+Unsaturated repository concepts are found above or near the top of the water 
+table. Water does not permeate the rock.
+
+Current investigations are focused primarily on saturated environments.
+
+\subsection{Reducing and Oxidizing Environments\cite{mason_oxidation_1949}}
+
+Elements exist in various oxidation states, a positive or negative number  
+refering to the charge of the atom due to the number of electrons it posesses.
+Oxidation refers to the increase of the oxidation state number of an element, 
+and reduction is the opposite.  That is, while oxidation is the chemical loss of 
+electrons by an atom, reduction is the gaining of electrons by an atom. 
+
+The redox potential is the tendency in potential energy for an element to give 
+up its electron and become more oxidized. This  potential energy is measured 
+relative to the potential for hydrogen atoms at unit concentration to lose 
+electrons and become oxidized, in volts,
+\begin{align}
+  H_2 \rightarrow 2H^+  + 2e.
+  \label{hydrogen}
+\end{align}
+
+The potential for the redox equation in equation \eqref{hydrogen} is chosen to 
+be 0 volts, such that for positive values of the redox potential, reactions tend 
+to proceed in the oxidation direction. Accordingly, reactions proceed in
+the reduction direction for negative potentials.
+
+Closed, saturated envrionments are reducing. Unsaturated environments and 
+environments that are saturated and open are oxidizing. 
+
+The far field of most reducing environments are slightly oxidizing as they reach 
+the zone near the overlying aquifer.
+
+\subsection{Salinity}
+
+Salinity affects sorption and solubility behaviors. It also expedites corrosion.  
+Finally, salt is an important indicator of the historical flow at a site.  Where 
+should salinity information get incorporated in this model?
+
+\subsection{Sorption}
+
+Sorption is a factor that retards movement, in which solutes are incorporated 
+into the surfaces of pores or fractures (adsorption) or incorporated into the 
+rock matrix (absorption). More specificially, when water with some solute 
+concentration, $C_i$, meets a porous medium or a granular solid, the reaction 
+proceeds toward an equilibrium in which the solute mass has partitioned between 
+the solution and the solid, such that,
+\begin{align}
+  S&=\frac{V_w(C_i -C)}{m_s}
+  \intertext{where}
+  S &= \mbox{ mass sorbed on the surface }[kg/kg]\nonumber\\
+  V_w &= \mbox{ volume of the solution  }[m^3]\nonumber\\
+  C_i &= \mbox{ initial concentration in the solution }[kg_m^3]\nonumber\\
+  C &= \mbox{ equilibrium concentration in the solution }[kg/m^3]\nonumber\\
+  m_s &= \mbox{ sediment mass }[kg].\nonumber
+\end{align}
+The function $S(C)$ is called a sorption isotherm. Two common forms for the 
+sorption isotherm are
+\begin{align}
+  S &= \begin{cases}
+    \text{Freundlich : } & KC^n\\ \text{Langmuir : } &\frac{Q^0KC}{1+KC}\\ 
+  \end{cases}
+  \label{isotherms}
+  \intertext{where}
+  K &= \mbox{ partition coefficient }[m^3/kg]\nonumber\\
+  n &= \mbox{ shaping constant }[-]\nonumber
+  \intertext{and}
+  Q^0 &= \mbox{ maximum sorptive capacity }[kg/kg].\nonumber
+  \intertext{If in the Freundlich isotherm,}
+  n &=1, \intertext{then}
+  S &= K_dC
+  \intertext{where}
+  K_d &= \mbox{ the distribution coefficient }[m^3/kg],\nonumber
+\end{align}
+and the isotherm becomes very easy to incorporate into the mass transport 
+equations, as in equation \eqref{linisomasstrans}.
+
+The simplest way to model sorption is with a linear isotherm and tabulated 
+values.  Sorption coefficients such as $K_d$ are tabulated elementally because 
+the character of the equilibrium reaction is element specific. For example, 
+iodine has different sorption behavior than carbon. These coefficients are
+also host rock specific. That is, each element has different sorption behaviors 
+in clay than in granite. 
+
+Geochemistry also plays a role, and sorption for some elements are higher in
+reducing environments. Sorption for some elements may be higher in oxidizing
+environments. 
+
+\subsection{Solubility} 
+
+The dissolution behavior of solutes in aqueous solutions is called its 
+solubility. This behavior is limited by the solute's solubility limit, described  
+by an equilibrium constant that depends upon temperature, water chemistry, and 
+the properties of the element. The solubility constant for ordinary solutes, 
+$K_s$ gives units of concentration, $[kg/m^3]$,   and can be determined 
+algebraically by the law of mass action which gives the partitioning at 
+equilibrium between reactants and products.  For a reaction
+\begin{align}
+  cC + dD &= yY + zZ,
+  \intertext{where}
+  c,d,y,z  &= \mbox{ amount of respective constituent }[mol]\nonumber\\
+  C,D  &= \mbox{ reactants }[-]\nonumber\\
+  Y,Z  &= \mbox{ products }[-]\nonumber,
+  \intertext{the law of mass action gives}
+  K &= \frac{(Y)^y(Z)^z}{(C)^c(D)^d}
+  \intertext{where}
+  (X)  &= \mbox{ the equilibrium molal concentration of X }[mol/m^3]\nonumber\\
+  K  &= \mbox{ the equilibrium constant }[-].\nonumber
+  \label{massaction}
+\end{align}
+The equillibrium constant for many reactions are known, and can be found in 
+chemical tables. Thereafter, the solubility constraints of a solution at 
+equilibrium can be found algebraically.  In cases of salts that  dissociate in 
+aqueous solutions, this equilibrium constant is called the salt's solubility 
+product $K_{sp}$.
+
+This equillibrium model, however, is only appropriate for dilute situations, and 
+nondilute solutions at  partial equilibrium must be treated with an activity 
+model by substituting the activities of the constituents  for their molal 
+concentrations,
+\begin{align}
+  [X] &= \gamma_x(X)
+  \intertext{where}
+  [X]  &= \mbox{ activity of X }[-]\nonumber\\
+  \gamma_x  &= \mbox{ activity coefficient of X}[-]\nonumber\\
+  (X)  &= \mbox{ molal concentration of X}[mol/m^3]\nonumber
+  \intertext{such that}
+  IAP &= \mbox{ Ion Activity Product }[-].\nonumber\\
+      &= \frac{[Y]^y[Z]^z}{[C]^c[D]^d}\\
+  \label{IAP}
+\end{align}
+The ration between the IAP and the equillibrium constant $(IAP/K)$ quantifiesn
+the departure from equilibrium of a solution.  This information is useful during 
+the transient stage in which a solute is first introduced to a solution. When 
+$IAP/K<1$, the solution is undersaturated with respect to the products. When, 
+conversely, $IAP/K>1$, the solution is oversaturated and precipitation of solids 
+in the volume will occur. 
+
+Two models of mass balance applicable to a control volume incorporating 
+solubility
+limitation include the Ahn and Hedin models.
+
+\subsubsection{Ahn Solubility Limited Release Model}
+
+In the Ahn models, radionuclides with lower solubility coefficients are modeled 
+with
+the solubility limited release model.  Solubility values are assumed from TSPA
+for this model, and elements with a solubility of less than $~5\times 10^{-2}
+[mol/m^3]$ are taken to be
+`low.' Elements in this `low' category include Zr, Nb, Sn and some toxic 
+actinides such as Th and Ra for an oxidizing, unsaturated environment similar to 
+the Yucca Mountain Repository.
+It should be noted that in a reducing environment, the actinides are not as 
+mobile, and the high and low solubility radionuclides will differ from this 
+model.
+This model suggests that dissolution of radionuclides into the flowthrough water 
+is dominated by diffusion, which is largely dependent upon the concentration 
+gradient between the waste matrix and the water. The mass balance driving 
+radionuclide release takes the form:
+
+\begin{equation}
+ \dot{m_i}=8\epsilon D_eS_iL\sqrt{\frac{Ur_0}{\pi D_e}}
+\end{equation} 
+
+where $\epsilon$, U, $r_0$, and L are the geometric and
+hydrologic factors porosity, water velocity, waste package radius, and waste
+package length, respectively. $D_e$ is the effective diffusion coefficient
+($m^2/yr$)  and $S_i$ is the solubility ($kg/m^3$) of isotope $i$.
+
+
+\subsubsection{Hedin Solubility Limited Release Model}
+
+In the Hedin model of the waste matrix, the amount of solute available within
+the waste package is solved for, and for radionuclides with low solubility, the 
+mass
+fraction released from the waste matrix is limited by a simplified description
+of their solubility. That is, 
+
+\begin{align} m_{1i}(t)\le v_{1i}(t)C_{sol}
+\end{align}
+
+where the mass $m_{1i}$ in $[kg]$ of a radionuclide $i$ dissolved into the waste 
+package
+void volume $v_1$ in $[m^3]$, at a time t, is limited by the solubility limit, 
+the maximum concentration, $C_{sol}$ in $[kg/m^3]$ at which that radionuclide is 
+soluble \cite{hedin_integrated_2002}.
+
+Various things affect solubility. Temperature, salinity, etc.
+
+A good model for solubility limitation is at the release boundary of the volume, 
+for mixed volumes.
+
