@@ -45,11 +45,11 @@
   \begin{picture}(1,0.74686929)%
     \put(0,0){\includegraphics[width=\unitlength]{effPorosity.eps}}%
     \put(0.6848237,0.5934504){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{
-$n_{eff}<< n_T$}}}%
+$\theta_{eff}<< \theta_T$}}}%
     \put(0.03079219,0.00827377){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{``well'' connected pore volume}}}%
     \put(0.03696231,0.76572752){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{
 ``poorly'' connected pore volume}}}%
     \put(0.68353484,0.27323822){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{
-$n_{eff}\sim n_T$}}}%
+$\theta_{eff}\sim \theta_T$}}}%
   \end{picture}%
 \endgroup
