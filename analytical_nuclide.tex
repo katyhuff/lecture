@@ -137,7 +137,7 @@ A special case of uniform flow, no flow, simplifies to the diffusion equation,
 \end{align}
 
 Solutions to these equations can be categorized by their boundary conditions.  
-The first, or Dirichlet type boundary conditions define a specified species 
+The first, specified-head or Dirichlet type boundary conditions define a specified species 
 concentration on some section of the boundary of the representative volume, 
 
 \begin{align}
@@ -145,7 +145,7 @@ concentration on some section of the boundary of the representative volume,
   \Gamma.
 \end{align}
 
-The second type or Neumann type boundary conditions describe a full set of 
+The second type, specified-flow or Neumann type boundary conditions describe a full set of 
 concentration gradients at the boundary of the domain
 
 \begin{align}
@@ -157,7 +157,8 @@ concentration gradients at the boundary of the domain
   \vec{J} &= \mbox{ solute mass flux } [kg/m^2\cdot s].\nonumber
 \end{align}
 
-The third, Cauchy, defines a solute flux along a boundary,
+The third, head-dependent mixed boundary condition or Cauchy type, defines a solute 
+flux along a boundary,
 
 \begin{align}
   vC(X,y,z,t) - D_x \frac{\partial C(x,y,z,t}{\partial x} &= 
