@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.48.1, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'acceptance.eps' (pdf, eps, ps)
+%% Accompanies image file 'acceptanceInt.eps' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -42,7 +42,7 @@
   \fi
   \global\let\svgwidth\undefined
   \makeatother
-  \begin{picture}(1,0.58101795)%
-    \put(0,0){\includegraphics[width=\unitlength]{acceptance.eps}}%
+  \begin{picture}(1,0.64873398)%
+    \put(0,0){\includegraphics[width=\unitlength]{acceptanceInt.eps}}%
   \end{picture}%
 \endgroup
